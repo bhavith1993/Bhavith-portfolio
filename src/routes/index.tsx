@@ -33,11 +33,10 @@ const dashboards = [
     href: "https://app.powerbi.com/view?r=eyJrIjoiN2Q5YjViNjUtOWQ1Mi00NDkxLTg2MDQtMjhkMjkzZDk2YjI5IiwidCI6IjIxZWM0YmZjLWE1NmEtNDI0OC1iNzIxLTU2NDBkNDAzYWYyMiJ9",
   },
   {
-    title: "Campaign Performance",
-    blurb: "Marketing campaign analytics — spend, conversions, ROAS and channel comparison with time-intelligence DAX patterns.",
+    title: "Marketing Dashboard — Kraken Coffee",
+    blurb: "Marketing performance for a coffee brand — campaign reach, conversion funnel, and channel ROI with time-intelligence DAX patterns.",
     tags: ["DAX", "Marketing", "Time Intelligence"],
-    
-    href: "https://app.powerbi.com/view?r=eyJrIjoiY2I3NmM1MjgtNWJlMC00ZjVjLThkYjMtYjZkM2IwN2VmMDhlIiwidCI6IjIxZWM0YmZjLWE1NmEtNDI0OC1iNzIxLTU2NDBkNDAzYWYyMiJ9",
+    href: "https://app.powerbi.com/view?r=eyJrIjoiYzZhYzBlOGItZjE4ZC00ZmExLTk5M2YtMTVlNGUyMTI2MDVkIiwidCI6IjIxZWM0YmZjLWE1NmEtNDI0OC1iNzIxLTU2NDBkNDAzYWYyMiJ9",
   },
 ];
 
