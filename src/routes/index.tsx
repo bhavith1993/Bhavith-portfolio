@@ -350,6 +350,45 @@ function Portfolio() {
         </div>
       </section>
 
+      {/* Certifications */}
+      <section id="certifications" className="border-b border-border/60 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <div className="text-xs uppercase tracking-wider text-primary">Credentials</div>
+              <h2 className="mt-2 font-display text-4xl font-semibold lg:text-5xl">Certifications</h2>
+            </div>
+            <p className="max-w-md text-muted-foreground">
+              Microsoft Fabric, Power BI, and modern data architecture — verified through Coursera.
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2">
+            {certifications.map((c) => (
+              <a
+                key={c.title}
+                href={c.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex flex-col rounded-xl border border-border bg-surface p-6 transition hover:border-primary/50"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <Award className="h-5 w-5 text-primary" />
+                  <span className="text-xs text-muted-foreground">{c.date}</span>
+                </div>
+                <h3 className="mt-4 font-display text-lg font-semibold leading-snug">{c.title}</h3>
+                <div className="mt-1 text-sm text-primary">{c.issuer}</div>
+                <p className="mt-3 text-sm text-muted-foreground">{c.detail}</p>
+                <div className="mt-4 inline-flex items-center gap-1 text-xs text-muted-foreground transition group-hover:text-primary">
+                  Verify on Coursera <ArrowUpRight className="h-3.5 w-3.5" />
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
       {/* Contact */}
       <section id="contact" className="py-24">
         <div className="mx-auto max-w-7xl px-6">
