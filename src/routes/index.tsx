@@ -3,11 +3,7 @@ import { ArrowUpRight, Download, Mail, Github, MapPin, BarChart3, Database, Shie
 
 import resumeAsset from "@/assets/resume.pdf.asset.json";
 import heroPortrait from "@/assets/hero-portrait.jpg";
-import dashExec from "@/assets/dashboard-executive.jpg";
-import dashFinance from "@/assets/dashboard-finance.jpg";
-import dashRetail from "@/assets/dashboard-retail.jpg";
-import dashEnergy from "@/assets/dashboard-energy.jpg";
-import dashGov from "@/assets/dashboard-governance.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,36 +19,28 @@ export const Route = createFileRoute("/")({
 
 const dashboards = [
   {
-    title: "Executive KPI Suite",
-    blurb: "Multi-page executive scorecards with drill-through, RLS, and Tabular Editor semantic models tuned via DAX Studio.",
-    tags: ["DAX", "Tabular Editor", "RLS"],
-    image: dashExec,
+    title: "Austin Real Estate Insights",
+    blurb: "Market analytics for Austin, TX — price trends, inventory, and neighborhood-level segmentation with interactive filters and drill-through.",
+    tags: ["DAX", "Power Query", "Real Estate"],
+    
+    href: "https://app.powerbi.com/view?r=eyJrIjoiM2U2NGVhMWItMjBhOS00NGI4LWJlMWItOTdhMTBlNmMzMTNiIiwidCI6IjIxZWM0YmZjLWE1NmEtNDI0OC1iNzIxLTU2NDBkNDAzYWYyMiJ9",
   },
   {
-    title: "Finance & P&L Reporting",
-    blurb: "Accounting and finance dashboards for a Montreal mandate — income statement, variance, expense analysis on Direct Lake.",
-    tags: ["Direct Lake", "Fabric", "Finance"],
-    image: dashFinance,
+    title: "HR Dashboard",
+    blurb: "Workforce analytics — headcount, attrition, diversity and tenure metrics modeled in a star schema with reusable DAX measures.",
+    tags: ["DAX", "HR Analytics", "Star Schema"],
+    
+    href: "https://app.powerbi.com/view?r=eyJrIjoiN2Q5YjViNjUtOWQ1Mi00NDkxLTg2MDQtMjhkMjkzZDk2YjI5IiwidCI6IjIxZWM0YmZjLWE1NmEtNDI0OC1iNzIxLTU2NDBkNDAzYWYyMiJ9",
   },
   {
-    title: "Retail Sales Performance",
-    blurb: "Large-scale Lululemon retail dashboards with SKU-level segmentation, regional maps, and sales-vs-target gauges.",
-    tags: ["SQL Server", "Power Query", "Retail"],
-    image: dashRetail,
-  },
-  {
-    title: "Renewable Operations",
-    blurb: "Solar panel quality (A/B/C grade) and MWh output tracking across plants with scheduled refresh from SQL Server.",
-    tags: ["Operations", "SQL", "Energy"],
-    image: dashEnergy,
-  },
-  {
-    title: "Governance & Data Quality",
-    blurb: "Reconciliation, anomaly detection, lineage and audit framework — Azure DevOps CI/CD for analytical assets.",
-    tags: ["Purview", "RBAC", "Governance"],
-    image: dashGov,
+    title: "Campaign Performance",
+    blurb: "Marketing campaign analytics — spend, conversions, ROAS and channel comparison with time-intelligence DAX patterns.",
+    tags: ["DAX", "Marketing", "Time Intelligence"],
+    
+    href: "https://app.powerbi.com/view?r=eyJrIjoiY2I3NmM1MjgtNWJlMC00ZjVjLThkYjMtYjZkM2IwN2VmMDhlIiwidCI6IjIxZWM0YmZjLWE1NmEtNDI0OC1iNzIxLTU2NDBkNDAzYWYyMiJ9",
   },
 ];
+
 
 const skills = [
   { icon: BarChart3, title: "Power BI & DAX", items: ["Advanced DAX measures", "Interactive visuals", "Drill-through & bookmarks", "Tabular Editor"] },
@@ -212,26 +200,33 @@ function Portfolio() {
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
             {dashboards.map((d, i) => (
               <article
                 key={d.title}
-                className={`group overflow-hidden rounded-xl border border-border bg-surface transition hover:border-primary/50 ${i === 0 ? "md:col-span-2" : ""}`}
+                className={`group overflow-hidden rounded-xl border border-border bg-surface transition hover:border-primary/50 ${i === 0 ? "lg:col-span-2" : ""}`}
               >
-                <div className="overflow-hidden bg-navy-deep">
-                  <img
-                    src={d.image}
-                    alt={`${d.title} Power BI dashboard`}
-                    width={1280}
-                    height={800}
+                <div className="relative overflow-hidden bg-navy-deep">
+                  <iframe
+                    src={d.href}
+                    title={`${d.title} — Power BI report`}
                     loading="lazy"
-                    className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                    allowFullScreen
+                    className="aspect-[16/10] w-full border-0"
                   />
                 </div>
                 <div className="p-6">
                   <div className="flex items-start justify-between gap-4">
                     <h3 className="font-display text-xl font-semibold">{d.title}</h3>
-                    <ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition group-hover:text-primary" />
+                    <a
+                      href={d.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Open ${d.title} in Power BI`}
+                      className="inline-flex items-center gap-1 text-xs text-muted-foreground transition hover:text-primary"
+                    >
+                      Open <ArrowUpRight className="h-4 w-4" />
+                    </a>
                   </div>
                   <p className="mt-2 text-sm text-muted-foreground">{d.blurb}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
@@ -245,6 +240,7 @@ function Portfolio() {
               </article>
             ))}
           </div>
+
         </div>
       </section>
 
