@@ -23,36 +23,28 @@ export const Route = createFileRoute("/")({
 
 const dashboards = [
   {
-    title: "Executive KPI Suite",
-    blurb: "Multi-page executive scorecards with drill-through, RLS, and Tabular Editor semantic models tuned via DAX Studio.",
-    tags: ["DAX", "Tabular Editor", "RLS"],
-    image: dashExec,
-  },
-  {
-    title: "Finance & P&L Reporting",
-    blurb: "Accounting and finance dashboards for a Montreal mandate — income statement, variance, expense analysis on Direct Lake.",
-    tags: ["Direct Lake", "Fabric", "Finance"],
+    title: "Austin Real Estate Insights",
+    blurb: "Market analytics for Austin, TX — price trends, inventory, and neighborhood-level segmentation with interactive filters and drill-through.",
+    tags: ["DAX", "Power Query", "Real Estate"],
     image: dashFinance,
+    href: "https://app.powerbi.com/view?r=eyJrIjoiM2U2NGVhMWItMjBhOS00NGI4LWJlMWItOTdhMTBlNmMzMTNiIiwidCI6IjIxZWM0YmZjLWE1NmEtNDI0OC1iNzIxLTU2NDBkNDAzYWYyMiJ9",
   },
   {
-    title: "Retail Sales Performance",
-    blurb: "Large-scale Lululemon retail dashboards with SKU-level segmentation, regional maps, and sales-vs-target gauges.",
-    tags: ["SQL Server", "Power Query", "Retail"],
+    title: "HR Dashboard",
+    blurb: "Workforce analytics — headcount, attrition, diversity and tenure metrics modeled in a star schema with reusable DAX measures.",
+    tags: ["DAX", "HR Analytics", "Star Schema"],
+    image: dashExec,
+    href: "https://app.powerbi.com/view?r=eyJrIjoiN2Q5YjViNjUtOWQ1Mi00NDkxLTg2MDQtMjhkMjkzZDk2YjI5IiwidCI6IjIxZWM0YmZjLWE1NmEtNDI0OC1iNzIxLTU2NDBkNDAzYWYyMiJ9",
+  },
+  {
+    title: "Campaign Performance",
+    blurb: "Marketing campaign analytics — spend, conversions, ROAS and channel comparison with time-intelligence DAX patterns.",
+    tags: ["DAX", "Marketing", "Time Intelligence"],
     image: dashRetail,
-  },
-  {
-    title: "Renewable Operations",
-    blurb: "Solar panel quality (A/B/C grade) and MWh output tracking across plants with scheduled refresh from SQL Server.",
-    tags: ["Operations", "SQL", "Energy"],
-    image: dashEnergy,
-  },
-  {
-    title: "Governance & Data Quality",
-    blurb: "Reconciliation, anomaly detection, lineage and audit framework — Azure DevOps CI/CD for analytical assets.",
-    tags: ["Purview", "RBAC", "Governance"],
-    image: dashGov,
+    href: "https://app.powerbi.com/view?r=eyJrIjoiY2I3NmM1MjgtNWJlMC00ZjVjLThkYjMtYjZkM2IwN2VmMDhlIiwidCI6IjIxZWM0YmZjLWE1NmEtNDI0OC1iNzIxLTU2NDBkNDAzYWYyMiJ9",
   },
 ];
+
 
 const skills = [
   { icon: BarChart3, title: "Power BI & DAX", items: ["Advanced DAX measures", "Interactive visuals", "Drill-through & bookmarks", "Tabular Editor"] },
