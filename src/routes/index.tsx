@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, Download, Mail, Github, MapPin, BarChart3, Database, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowUpRight, Download, Mail, Github, MapPin, BarChart3, Database, ShieldCheck, Sparkles, Award } from "lucide-react";
 
 import resumeAsset from "@/assets/resume.pdf.asset.json";
 import portraitAsset from "@/assets/portrait.png.asset.json";
@@ -90,6 +90,37 @@ const experience = [
   },
 ];
 
+const certifications = [
+  {
+    title: "Microsoft Data Architecture for Modern Data Stacks",
+    issuer: "Coursera Professional Certificate · 5 courses",
+    date: "Jun 2026",
+    detail: "OneLake, Fabric Lakehouse & Warehouse, governance, security, advanced analytics & AI optimization.",
+    href: "https://coursera.org/verify/professional-cert/I8YVA70F6Q8C",
+  },
+  {
+    title: "Exam Prep DP-600: Microsoft Fabric Analytics Engineer",
+    issuer: "Whizlabs · Coursera",
+    date: "Jun 2026",
+    detail: "Implementing analytics solutions using Microsoft Fabric.",
+    href: "https://coursera.org/verify/U0BA8176DJ0M",
+  },
+  {
+    title: "Advanced Power BI Integration, AI, and Governance Strategies",
+    issuer: "Packt · Coursera",
+    date: "Jun 2026",
+    detail: "AI-powered Power BI, enterprise integration patterns, governance at scale.",
+    href: "https://coursera.org/verify/LZSBEJ25OIAP",
+  },
+  {
+    title: "Optimizing Data Models and Performance in Microsoft Fabric",
+    issuer: "Packt · Coursera",
+    date: "Jun 2026",
+    detail: "Semantic model tuning, Direct Lake performance, query optimization.",
+    href: "https://coursera.org/verify/X0EBHH5VMAHU",
+  },
+];
+
 function Portfolio() {
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -103,6 +134,7 @@ function Portfolio() {
             <a href="#work" className="hover:text-foreground">Work</a>
             <a href="#skills" className="hover:text-foreground">Skills</a>
             <a href="#experience" className="hover:text-foreground">Experience</a>
+            <a href="#certifications" className="hover:text-foreground">Certifications</a>
             <a href="#contact" className="hover:text-foreground">Contact</a>
           </nav>
           <a
@@ -317,6 +349,45 @@ function Portfolio() {
           </div>
         </div>
       </section>
+
+      {/* Certifications */}
+      <section id="certifications" className="border-b border-border/60 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <div className="text-xs uppercase tracking-wider text-primary">Credentials</div>
+              <h2 className="mt-2 font-display text-4xl font-semibold lg:text-5xl">Certifications</h2>
+            </div>
+            <p className="max-w-md text-muted-foreground">
+              Microsoft Fabric, Power BI, and modern data architecture — verified through Coursera.
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2">
+            {certifications.map((c) => (
+              <a
+                key={c.title}
+                href={c.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex flex-col rounded-xl border border-border bg-surface p-6 transition hover:border-primary/50"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <Award className="h-5 w-5 text-primary" />
+                  <span className="text-xs text-muted-foreground">{c.date}</span>
+                </div>
+                <h3 className="mt-4 font-display text-lg font-semibold leading-snug">{c.title}</h3>
+                <div className="mt-1 text-sm text-primary">{c.issuer}</div>
+                <p className="mt-3 text-sm text-muted-foreground">{c.detail}</p>
+                <div className="mt-4 inline-flex items-center gap-1 text-xs text-muted-foreground transition group-hover:text-primary">
+                  Verify on Coursera <ArrowUpRight className="h-3.5 w-3.5" />
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       {/* Contact */}
       <section id="contact" className="py-24">
