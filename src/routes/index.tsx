@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, Download, Mail, Github, MapPin, BarChart3, Database, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowUpRight, Download, Mail, Github, MapPin, BarChart3, Database, ShieldCheck, Sparkles, Award } from "lucide-react";
 
 import resumeAsset from "@/assets/resume.pdf.asset.json";
 import portraitAsset from "@/assets/portrait.png.asset.json";
