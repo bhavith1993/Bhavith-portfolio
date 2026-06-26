@@ -43,7 +43,7 @@ const dashboards = [
 
 const skills = [
   { icon: BarChart3, title: "Power BI & DAX", items: ["Advanced DAX measures", "Interactive visuals", "Drill-through & bookmarks", "Tabular Editor"] },
-  { icon: Database, title: "Modeling & Platform", items: ["Star schema modeling", "Microsoft Fabric — Direct Lake", "SQL Server & stored procedures", "Power Query / M"] },
+  { icon: Database, title: "Modeling & Platform", items: ["Star schema modeling", "Microsoft Fabric — Lakehouse, Warehouse, Realtime Dashboards", "SQL — CTEs, joins, stored procedures, window functions", "Power Query / M"] },
   { icon: Sparkles, title: "Performance", items: ["DAX Studio tuning", "Incremental refresh", "60% faster report loads", "Semantic model consolidation"] },
   { icon: ShieldCheck, title: "Security & Governance", items: ["Row-Level Security (RLS)", "Microsoft Purview", "RBAC in Fabric workspaces", "Azure DevOps CI/CD"] },
 ];
