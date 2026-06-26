@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Download, Mail, Github, MapPin, BarChart3, Database, ShieldCheck, Sparkles } from "lucide-react";
 
 import resumeAsset from "@/assets/resume.pdf.asset.json";
-import heroPortrait from "@/assets/hero-portrait.jpg";
+import portraitAsset from "@/assets/portrait.png.asset.json";
 
 
 export const Route = createFileRoute("/")({
@@ -166,7 +166,7 @@ function Portfolio() {
             <div className="absolute -inset-4 rounded-2xl bg-primary/10 blur-2xl" aria-hidden />
             <div className="relative overflow-hidden rounded-2xl border border-border bg-surface">
               <img
-                src={heroPortrait}
+                src={portraitAsset.url}
                 alt="Bhavith Shetty"
                 width={900}
                 height={1100}
