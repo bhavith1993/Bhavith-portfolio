@@ -134,6 +134,7 @@ function Portfolio() {
             <a href="#work" className="hover:text-foreground">Work</a>
             <a href="#skills" className="hover:text-foreground">Skills</a>
             <a href="#experience" className="hover:text-foreground">Experience</a>
+            <a href="#certifications" className="hover:text-foreground">Certifications</a>
             <a href="#contact" className="hover:text-foreground">Contact</a>
           </nav>
           <a
