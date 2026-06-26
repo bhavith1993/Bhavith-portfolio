@@ -90,6 +90,37 @@ const experience = [
   },
 ];
 
+const certifications = [
+  {
+    title: "Microsoft Data Architecture for Modern Data Stacks",
+    issuer: "Coursera Professional Certificate · 5 courses",
+    date: "Jun 2026",
+    detail: "OneLake, Fabric Lakehouse & Warehouse, governance, security, advanced analytics & AI optimization.",
+    href: "https://coursera.org/verify/professional-cert/I8YVA70F6Q8C",
+  },
+  {
+    title: "Exam Prep DP-600: Microsoft Fabric Analytics Engineer",
+    issuer: "Whizlabs · Coursera",
+    date: "Jun 2026",
+    detail: "Implementing analytics solutions using Microsoft Fabric.",
+    href: "https://coursera.org/verify/U0BA8176DJ0M",
+  },
+  {
+    title: "Advanced Power BI Integration, AI, and Governance Strategies",
+    issuer: "Packt · Coursera",
+    date: "Jun 2026",
+    detail: "AI-powered Power BI, enterprise integration patterns, governance at scale.",
+    href: "https://coursera.org/verify/LZSBEJ25OIAP",
+  },
+  {
+    title: "Optimizing Data Models and Performance in Microsoft Fabric",
+    issuer: "Packt · Coursera",
+    date: "Jun 2026",
+    detail: "Semantic model tuning, Direct Lake performance, query optimization.",
+    href: "https://coursera.org/verify/X0EBHH5VMAHU",
+  },
+];
+
 function Portfolio() {
   return (
     <div className="min-h-screen bg-background text-foreground">
