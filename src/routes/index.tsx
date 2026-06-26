@@ -204,26 +204,33 @@ function Portfolio() {
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
             {dashboards.map((d, i) => (
               <article
                 key={d.title}
-                className={`group overflow-hidden rounded-xl border border-border bg-surface transition hover:border-primary/50 ${i === 0 ? "md:col-span-2" : ""}`}
+                className={`group overflow-hidden rounded-xl border border-border bg-surface transition hover:border-primary/50 ${i === 0 ? "lg:col-span-2" : ""}`}
               >
-                <div className="overflow-hidden bg-navy-deep">
-                  <img
-                    src={d.image}
-                    alt={`${d.title} Power BI dashboard`}
-                    width={1280}
-                    height={800}
+                <div className="relative overflow-hidden bg-navy-deep">
+                  <iframe
+                    src={d.href}
+                    title={`${d.title} — Power BI report`}
                     loading="lazy"
-                    className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                    allowFullScreen
+                    className="aspect-[16/10] w-full border-0"
                   />
                 </div>
                 <div className="p-6">
                   <div className="flex items-start justify-between gap-4">
                     <h3 className="font-display text-xl font-semibold">{d.title}</h3>
-                    <ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition group-hover:text-primary" />
+                    <a
+                      href={d.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Open ${d.title} in Power BI`}
+                      className="inline-flex items-center gap-1 text-xs text-muted-foreground transition hover:text-primary"
+                    >
+                      Open <ArrowUpRight className="h-4 w-4" />
+                    </a>
                   </div>
                   <p className="mt-2 text-sm text-muted-foreground">{d.blurb}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
@@ -237,6 +244,7 @@ function Portfolio() {
               </article>
             ))}
           </div>
+
         </div>
       </section>
 
