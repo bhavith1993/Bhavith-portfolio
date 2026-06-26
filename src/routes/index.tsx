@@ -3,11 +3,7 @@ import { ArrowUpRight, Download, Mail, Github, MapPin, BarChart3, Database, Shie
 
 import resumeAsset from "@/assets/resume.pdf.asset.json";
 import heroPortrait from "@/assets/hero-portrait.jpg";
-import dashExec from "@/assets/dashboard-executive.jpg";
-import dashFinance from "@/assets/dashboard-finance.jpg";
-import dashRetail from "@/assets/dashboard-retail.jpg";
-import dashEnergy from "@/assets/dashboard-energy.jpg";
-import dashGov from "@/assets/dashboard-governance.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
