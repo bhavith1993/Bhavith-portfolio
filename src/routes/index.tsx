@@ -22,21 +22,21 @@ const dashboards = [
     title: "Austin Real Estate Insights",
     blurb: "Market analytics for Austin, TX — price trends, inventory, and neighborhood-level segmentation with interactive filters and drill-through.",
     tags: ["DAX", "Power Query", "Real Estate"],
-    image: dashFinance,
+    
     href: "https://app.powerbi.com/view?r=eyJrIjoiM2U2NGVhMWItMjBhOS00NGI4LWJlMWItOTdhMTBlNmMzMTNiIiwidCI6IjIxZWM0YmZjLWE1NmEtNDI0OC1iNzIxLTU2NDBkNDAzYWYyMiJ9",
   },
   {
     title: "HR Dashboard",
     blurb: "Workforce analytics — headcount, attrition, diversity and tenure metrics modeled in a star schema with reusable DAX measures.",
     tags: ["DAX", "HR Analytics", "Star Schema"],
-    image: dashExec,
+    
     href: "https://app.powerbi.com/view?r=eyJrIjoiN2Q5YjViNjUtOWQ1Mi00NDkxLTg2MDQtMjhkMjkzZDk2YjI5IiwidCI6IjIxZWM0YmZjLWE1NmEtNDI0OC1iNzIxLTU2NDBkNDAzYWYyMiJ9",
   },
   {
     title: "Campaign Performance",
     blurb: "Marketing campaign analytics — spend, conversions, ROAS and channel comparison with time-intelligence DAX patterns.",
     tags: ["DAX", "Marketing", "Time Intelligence"],
-    image: dashRetail,
+    
     href: "https://app.powerbi.com/view?r=eyJrIjoiY2I3NmM1MjgtNWJlMC00ZjVjLThkYjMtYjZkM2IwN2VmMDhlIiwidCI6IjIxZWM0YmZjLWE1NmEtNDI0OC1iNzIxLTU2NDBkNDAzYWYyMiJ9",
   },
 ];
