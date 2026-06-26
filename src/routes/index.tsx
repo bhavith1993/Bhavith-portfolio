@@ -1,29 +1,380 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ArrowUpRight, Download, Mail, Github, MapPin, BarChart3, Database, ShieldCheck, Sparkles } from "lucide-react";
+
+import resumeAsset from "@/assets/resume.pdf.asset.json";
+import heroPortrait from "@/assets/hero-portrait.jpg";
+import dashExec from "@/assets/dashboard-executive.jpg";
+import dashFinance from "@/assets/dashboard-finance.jpg";
+import dashRetail from "@/assets/dashboard-retail.jpg";
+import dashEnergy from "@/assets/dashboard-energy.jpg";
+import dashGov from "@/assets/dashboard-governance.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Bhavith Shetty — Power BI Developer & BI Engineer" },
+      { name: "description", content: "Power BI Developer with 5+ years building DAX models, Microsoft Fabric semantic layers, RLS and governance frameworks. Download resume and view dashboards." },
+      { property: "og:title", content: "Bhavith Shetty — Power BI Developer & BI Engineer" },
+      { property: "og:description", content: "DAX, Microsoft Fabric, semantic modeling, governance. Reports that move decisions." },
     ],
   }),
-  component: Index,
+  component: Portfolio,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+const dashboards = [
+  {
+    title: "Executive KPI Suite",
+    blurb: "Multi-page executive scorecards with drill-through, RLS, and Tabular Editor semantic models tuned via DAX Studio.",
+    tags: ["DAX", "Tabular Editor", "RLS"],
+    image: dashExec,
+  },
+  {
+    title: "Finance & P&L Reporting",
+    blurb: "Accounting and finance dashboards for a Montreal mandate — income statement, variance, expense analysis on Direct Lake.",
+    tags: ["Direct Lake", "Fabric", "Finance"],
+    image: dashFinance,
+  },
+  {
+    title: "Retail Sales Performance",
+    blurb: "Large-scale Lululemon retail dashboards with SKU-level segmentation, regional maps, and sales-vs-target gauges.",
+    tags: ["SQL Server", "Power Query", "Retail"],
+    image: dashRetail,
+  },
+  {
+    title: "Renewable Operations",
+    blurb: "Solar panel quality (A/B/C grade) and MWh output tracking across plants with scheduled refresh from SQL Server.",
+    tags: ["Operations", "SQL", "Energy"],
+    image: dashEnergy,
+  },
+  {
+    title: "Governance & Data Quality",
+    blurb: "Reconciliation, anomaly detection, lineage and audit framework — Azure DevOps CI/CD for analytical assets.",
+    tags: ["Purview", "RBAC", "Governance"],
+    image: dashGov,
+  },
+];
+
+const skills = [
+  { icon: BarChart3, title: "Power BI & DAX", items: ["Advanced DAX measures", "Interactive visuals", "Drill-through & bookmarks", "Tabular Editor"] },
+  { icon: Database, title: "Modeling & Platform", items: ["Star schema modeling", "Microsoft Fabric — Direct Lake", "SQL Server & stored procedures", "Power Query / M"] },
+  { icon: Sparkles, title: "Performance", items: ["DAX Studio tuning", "Incremental refresh", "60% faster report loads", "Semantic model consolidation"] },
+  { icon: ShieldCheck, title: "Security & Governance", items: ["Row-Level Security (RLS)", "Microsoft Purview", "RBAC in Fabric workspaces", "Azure DevOps CI/CD"] },
+];
+
+const experience = [
+  {
+    role: "Power BI Consultant",
+    org: "Independent — I4C mandate, Montreal",
+    period: "Jan 2026 – Present",
+    bullets: [
+      "Designing accounting & finance Power BI reports and semantic models.",
+      "Migrating legacy models to Microsoft Fabric on Direct Lake for scale.",
+      "Implementing governance with Purview and RBAC across workspaces.",
+    ],
+  },
+  {
+    role: "System Analyst — Power BI & Data Engineering",
+    org: "Brookfield Renewable Partners",
+    period: "Apr 2023 – Dec 2025",
+    bullets: [
+      "Cut report load times by 60% using Tabular Editor + DAX Studio.",
+      "Reduced data-quality incidents by 80% via RLS and governance frameworks.",
+      "Consolidated 12 settlement reports into a single reusable semantic model.",
+      "Built Alteryx + SQL workflow generating XSD-conformant XML for IFS ERP.",
+    ],
+  },
+  {
+    role: "Power BI Developer (Contract)",
+    org: "Lululemon Athletica",
+    period: "Jan 2022 – Mar 2023",
+    bullets: [
+      "Built dashboards and semantic models over large retail datasets.",
+      "Authored SQL Server stored procedures feeding the reporting layer.",
+    ],
+  },
+  {
+    role: "Senior Engineer",
+    org: "Adani Solar & PV Power Technologies",
+    period: "Jun 2016 – Dec 2020",
+    bullets: [
+      "Power BI dashboards tracking A/B/C grade solar panel quality and output.",
+      "Connected SQL Server and online Excel sources for production analytics.",
+    ],
+  },
+];
+
+function Portfolio() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Nav */}
+      <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <a href="#top" className="font-display text-sm font-semibold tracking-tight">
+            Bhavith Shetty<span className="text-primary">.</span>
+          </a>
+          <nav className="hidden gap-8 text-sm text-muted-foreground md:flex">
+            <a href="#work" className="hover:text-foreground">Work</a>
+            <a href="#skills" className="hover:text-foreground">Skills</a>
+            <a href="#experience" className="hover:text-foreground">Experience</a>
+            <a href="#contact" className="hover:text-foreground">Contact</a>
+          </nav>
+          <a
+            href={resumeAsset.url}
+            download="Bhavith_Shetty_Resume.pdf"
+            className="inline-flex items-center gap-2 rounded-md bg-primary px-3.5 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90"
+          >
+            <Download className="h-4 w-4" /> Resume
+          </a>
+        </div>
+      </header>
+
+      {/* Hero — split screen */}
+      <section id="top" className="relative overflow-hidden border-b border-border/60">
+        <div className="grid-lines absolute inset-0 opacity-60" aria-hidden />
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-20 lg:grid-cols-2 lg:gap-16 lg:py-28">
+          <div className="flex flex-col justify-center">
+            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1 text-xs text-muted-foreground">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+              Available for BI consulting engagements
+            </div>
+            <h1 className="mt-6 font-display text-5xl font-semibold leading-[1.05] text-balance lg:text-7xl">
+              Reports that move<br />
+              <span className="text-primary">decisions.</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-lg text-muted-foreground">
+              I'm <span className="text-foreground">Bhavith Shetty</span> — a Power BI developer and BI engineer with 5+ years
+              building DAX models, Microsoft Fabric semantic layers, and governance frameworks for finance, retail and energy teams.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href={resumeAsset.url}
+                download="Bhavith_Shetty_Resume.pdf"
+                className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition hover:opacity-90"
+              >
+                <Download className="h-4 w-4" /> Download résumé
+              </a>
+              <a
+                href="#work"
+                className="inline-flex items-center gap-2 rounded-md border border-border bg-surface/60 px-5 py-3 text-sm font-medium hover:bg-surface"
+              >
+                View dashboards <ArrowUpRight className="h-4 w-4" />
+              </a>
+            </div>
+            <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-border/60 pt-8">
+              <div>
+                <dt className="text-xs uppercase tracking-wider text-muted-foreground">Experience</dt>
+                <dd className="mt-1 font-display text-2xl font-semibold">5+ yrs</dd>
+              </div>
+              <div>
+                <dt className="text-xs uppercase tracking-wider text-muted-foreground">Load time</dt>
+                <dd className="mt-1 font-display text-2xl font-semibold">−60%</dd>
+              </div>
+              <div>
+                <dt className="text-xs uppercase tracking-wider text-muted-foreground">DQ incidents</dt>
+                <dd className="mt-1 font-display text-2xl font-semibold">−80%</dd>
+              </div>
+            </dl>
+          </div>
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-2xl bg-primary/10 blur-2xl" aria-hidden />
+            <div className="relative overflow-hidden rounded-2xl border border-border bg-surface">
+              <img
+                src={heroPortrait}
+                alt="Bhavith Shetty"
+                width={900}
+                height={1100}
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-lg border border-border bg-background/70 px-4 py-3 backdrop-blur">
+                <div>
+                  <div className="text-sm font-medium">Bhavith Shetty</div>
+                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                    <MapPin className="h-3 w-3" /> Mumbai, India — Remote
+                  </div>
+                </div>
+                <span className="rounded-full bg-primary/15 px-2.5 py-1 text-xs font-medium text-primary">Power BI · Fabric</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Dashboards */}
+      <section id="work" className="border-b border-border/60 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <div className="text-xs uppercase tracking-wider text-primary">Selected work</div>
+              <h2 className="mt-2 font-display text-4xl font-semibold lg:text-5xl">Power BI dashboards</h2>
+            </div>
+            <p className="max-w-md text-muted-foreground">
+              A sample of production reports built across finance, retail, and energy — modeled in Tabular Editor, tuned in DAX Studio, secured with RLS.
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+            {dashboards.map((d, i) => (
+              <article
+                key={d.title}
+                className={`group overflow-hidden rounded-xl border border-border bg-surface transition hover:border-primary/50 ${i === 0 ? "md:col-span-2" : ""}`}
+              >
+                <div className="overflow-hidden bg-navy-deep">
+                  <img
+                    src={d.image}
+                    alt={`${d.title} Power BI dashboard`}
+                    width={1280}
+                    height={800}
+                    loading="lazy"
+                    className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="font-display text-xl font-semibold">{d.title}</h3>
+                    <ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition group-hover:text-primary" />
+                  </div>
+                  <p className="mt-2 text-sm text-muted-foreground">{d.blurb}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {d.tags.map((t) => (
+                      <span key={t} className="rounded-full border border-border bg-background/40 px-2.5 py-1 text-xs text-muted-foreground">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Skills */}
+      <section id="skills" className="border-b border-border/60 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+            <div>
+              <div className="text-xs uppercase tracking-wider text-primary">Capabilities</div>
+              <h2 className="mt-2 font-display text-4xl font-semibold lg:text-5xl text-balance">
+                Modeling, performance, and governance — end to end.
+              </h2>
+              <p className="mt-6 max-w-md text-muted-foreground">
+                I build reusable semantic models, tune them for sub-second interactivity, and wrap them in
+                the security and governance enterprise teams actually need.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {skills.map(({ icon: Icon, title, items }) => (
+                <div key={title} className="rounded-xl border border-border bg-surface p-6">
+                  <Icon className="h-5 w-5 text-primary" />
+                  <h3 className="mt-4 font-display text-lg font-semibold">{title}</h3>
+                  <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
+                    {items.map((it) => (
+                      <li key={it} className="flex gap-2">
+                        <span className="text-primary">›</span>{it}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience */}
+      <section id="experience" className="border-b border-border/60 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="text-xs uppercase tracking-wider text-primary">Experience</div>
+          <h2 className="mt-2 font-display text-4xl font-semibold lg:text-5xl">Where I've shipped BI.</h2>
+
+          <ol className="mt-12 space-y-4">
+            {experience.map((e) => (
+              <li key={e.role + e.org} className="grid grid-cols-1 gap-6 rounded-xl border border-border bg-surface p-6 md:grid-cols-[1fr_2fr] md:p-8">
+                <div>
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground">{e.period}</div>
+                  <h3 className="mt-2 font-display text-xl font-semibold">{e.role}</h3>
+                  <div className="mt-1 text-sm text-primary">{e.org}</div>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  {e.bullets.map((b) => (
+                    <li key={b} className="flex gap-3">
+                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ol>
+
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {[
+              { label: "M.S. Analytics (in progress)", org: "Georgia Institute of Technology" },
+              { label: "PG Diploma, Data Analysis for BI", org: "St. Clair College, Canada" },
+              { label: "B.Tech, EEE", org: "Shivaji University" },
+            ].map((ed) => (
+              <div key={ed.label} className="rounded-xl border border-border bg-surface p-5">
+                <div className="text-xs uppercase tracking-wider text-muted-foreground">Education</div>
+                <div className="mt-2 font-medium">{ed.label}</div>
+                <div className="text-sm text-muted-foreground">{ed.org}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-surface to-background p-8 md:p-14">
+            <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
+              <div>
+                <div className="text-xs uppercase tracking-wider text-primary">Let's talk</div>
+                <h2 className="mt-2 font-display text-4xl font-semibold lg:text-5xl text-balance">
+                  Need a BI lead who ships?
+                </h2>
+                <p className="mt-4 max-w-md text-muted-foreground">
+                  I take on Power BI development, Fabric migrations, performance audits, and governance rollouts.
+                  Send the brief and I'll come back with a plan.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3">
+                <a
+                  href={resumeAsset.url}
+                  download="Bhavith_Shetty_Resume.pdf"
+                  className="inline-flex items-center justify-between rounded-lg bg-primary px-5 py-4 text-sm font-medium text-primary-foreground transition hover:opacity-90"
+                >
+                  <span className="flex items-center gap-3"><Download className="h-4 w-4" /> Download résumé (PDF)</span>
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+                <a
+                  href="mailto:hello@example.com"
+                  className="inline-flex items-center justify-between rounded-lg border border-border bg-surface px-5 py-4 text-sm font-medium hover:bg-muted"
+                >
+                  <span className="flex items-center gap-3"><Mail className="h-4 w-4 text-primary" /> Email Bhavith</span>
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://github.com/bhavith1993"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-between rounded-lg border border-border bg-surface px-5 py-4 text-sm font-medium hover:bg-muted"
+                >
+                  <span className="flex items-center gap-3"><Github className="h-4 w-4 text-primary" /> github.com/bhavith1993</span>
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-border/60 py-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 text-xs text-muted-foreground md:flex-row">
+          <div>© {new Date().getFullYear()} Bhavith Shetty — Power BI Developer.</div>
+          <div>Mumbai, India · Remote · Built with care.</div>
+        </div>
+      </footer>
     </div>
   );
 }
