@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Download, Mail, Github, MapPin, BarChart3, Database, ShieldCheck, Sparkles, Award } from "lucide-react";
 
-import resumeAsset from "@/assets/resume.pdf.asset.json";
+import resumeUrl from "@/assets/Bhavith_Shetty_Resume.pdf?url";
 import portraitAsset from "@/assets/portrait.png.asset.json";
 import shoppingmartArch from "@/assets/shoppingmart-architecture.png";
 
@@ -150,7 +150,7 @@ function Portfolio() {
             <a href="#contact" className="hover:text-foreground">Contact</a>
           </nav>
           <a
-            href={resumeAsset.url}
+            href={resumeUrl}
             download="Bhavith_Shetty_Resume.pdf"
             className="inline-flex items-center gap-2 rounded-md bg-primary px-3.5 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90"
           >
@@ -178,7 +178,7 @@ function Portfolio() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href={resumeAsset.url}
+                href={resumeUrl}
                 download="Bhavith_Shetty_Resume.pdf"
                 className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition hover:opacity-90"
               >
@@ -475,7 +475,7 @@ function Portfolio() {
               </div>
               <div className="flex flex-col gap-3">
                 <a
-                  href={resumeAsset.url}
+                  href={resumeUrl}
                   download="Bhavith_Shetty_Resume.pdf"
                   className="inline-flex items-center justify-between rounded-lg bg-primary px-5 py-4 text-sm font-medium text-primary-foreground transition hover:opacity-90"
                 >
