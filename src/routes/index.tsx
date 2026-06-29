@@ -41,6 +41,15 @@ const dashboards = [
 ];
 
 
+const projects = [
+  {
+    title: "ShoppingMart Analytics — End-to-End Fabric Medallion Pipeline",
+    blurb: "A governed Microsoft Fabric platform unifying structured transactions and unstructured reviews/social data through Bronze, Silver, and Gold lakehouse layers into a Direct Lake star schema. Metadata-driven ingestion, PySpark transformations, RLS, Purview lineage, and Git-based CI/CD.",
+    tags: ["Microsoft Fabric", "PySpark", "Direct Lake", "Medallion", "Azure DevOps"],
+    href: "https://github.com/bhavith1993/Shopping-Mart-Analytics",
+  },
+];
+
 const skills = [
   { icon: BarChart3, title: "Power BI & DAX", items: ["Advanced DAX measures", "Interactive visuals", "Drill-through & bookmarks", "Tabular Editor"] },
   { icon: Database, title: "Modeling & Platform", items: ["Star schema modeling", "Microsoft Fabric — Lakehouse, Warehouse, Realtime Dashboards", "SQL — CTEs, joins, stored procedures, window functions", "Power Query / M"] },
@@ -132,6 +141,7 @@ function Portfolio() {
           </a>
           <nav className="hidden gap-8 text-sm text-muted-foreground md:flex">
             <a href="#work" className="hover:text-foreground">Work</a>
+            <a href="#projects" className="hover:text-foreground">Projects</a>
             <a href="#skills" className="hover:text-foreground">Skills</a>
             <a href="#experience" className="hover:text-foreground">Experience</a>
             <a href="#certifications" className="hover:text-foreground">Certifications</a>
@@ -272,6 +282,51 @@ function Portfolio() {
             ))}
           </div>
 
+        </div>
+      </section>
+
+      {/* Data Engineering Projects */}
+      <section id="projects" className="border-b border-border/60 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <div className="text-xs uppercase tracking-wider text-primary">Selected work</div>
+              <h2 className="mt-2 font-display text-4xl font-semibold lg:text-5xl">Data engineering projects</h2>
+            </div>
+            <p className="max-w-md text-muted-foreground">
+              End-to-end data platforms — ingestion, medallion architecture, semantic modeling, and CI/CD on Microsoft Fabric and Azure.
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 gap-6">
+            {projects.map((p) => (
+              <article
+                key={p.title}
+                className="group rounded-xl border border-border bg-surface p-6 transition hover:border-primary/50"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <h3 className="font-display text-xl font-semibold">{p.title}</h3>
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Open ${p.title} on GitHub`}
+                    className="inline-flex shrink-0 items-center gap-1 text-xs text-muted-foreground transition hover:text-primary"
+                  >
+                    <Github className="h-4 w-4" /> Repo <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                </div>
+                <p className="mt-2 text-sm text-muted-foreground">{p.blurb}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {p.tags.map((t) => (
+                    <span key={t} className="rounded-full border border-border bg-background/40 px-2.5 py-1 text-xs text-muted-foreground">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
