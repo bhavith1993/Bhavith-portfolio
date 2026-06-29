@@ -3,6 +3,7 @@ import { ArrowUpRight, Download, Mail, Github, MapPin, BarChart3, Database, Shie
 
 import resumeAsset from "@/assets/resume.pdf.asset.json";
 import portraitAsset from "@/assets/portrait.png.asset.json";
+import shoppingmartArch from "@/assets/shoppingmart-architecture.png";
 
 
 export const Route = createFileRoute("/")({
@@ -47,6 +48,7 @@ const projects = [
     blurb: "A governed Microsoft Fabric platform unifying structured transactions and unstructured reviews/social data through Bronze, Silver, and Gold lakehouse layers into a Direct Lake star schema. Metadata-driven ingestion, PySpark transformations, RLS, Purview lineage, and Git-based CI/CD.",
     tags: ["Microsoft Fabric", "PySpark", "Direct Lake", "Medallion", "Azure DevOps"],
     href: "https://github.com/bhavith1993/Shopping-Mart-Analytics",
+    arch: shoppingmartArch,
   },
 ];
 
@@ -302,27 +304,39 @@ function Portfolio() {
             {projects.map((p) => (
               <article
                 key={p.title}
-                className="group rounded-xl border border-border bg-surface p-6 transition hover:border-primary/50"
+                className="group overflow-hidden rounded-xl border border-border bg-surface transition hover:border-primary/50"
               >
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="font-display text-xl font-semibold">{p.title}</h3>
-                  <a
-                    href={p.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`Open ${p.title} on GitHub`}
-                    className="inline-flex shrink-0 items-center gap-1 text-xs text-muted-foreground transition hover:text-primary"
-                  >
-                    <Github className="h-4 w-4" /> Repo <ArrowUpRight className="h-4 w-4" />
+                {p.arch && (
+                  <a href={p.href} target="_blank" rel="noreferrer" className="block overflow-hidden border-b border-border bg-white">
+                    <img
+                      src={p.arch}
+                      alt={`${p.title} — architecture diagram`}
+                      loading="lazy"
+                      className="w-full"
+                    />
                   </a>
-                </div>
-                <p className="mt-2 text-sm text-muted-foreground">{p.blurb}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {p.tags.map((t) => (
-                    <span key={t} className="rounded-full border border-border bg-background/40 px-2.5 py-1 text-xs text-muted-foreground">
-                      {t}
-                    </span>
-                  ))}
+                )}
+                <div className="p-6">
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="font-display text-xl font-semibold">{p.title}</h3>
+                    <a
+                      href={p.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Open ${p.title} on GitHub`}
+                      className="inline-flex shrink-0 items-center gap-1 text-xs text-muted-foreground transition hover:text-primary"
+                    >
+                      <Github className="h-4 w-4" /> Repo <ArrowUpRight className="h-4 w-4" />
+                    </a>
+                  </div>
+                  <p className="mt-2 text-sm text-muted-foreground">{p.blurb}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {p.tags.map((t) => (
+                      <span key={t} className="rounded-full border border-border bg-background/40 px-2.5 py-1 text-xs text-muted-foreground">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </article>
             ))}
