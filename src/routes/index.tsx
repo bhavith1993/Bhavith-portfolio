@@ -487,7 +487,10 @@ function Portfolio() {
                   href="mailto:nkrbhavith@gmail.com"
                   className="inline-flex items-center justify-between rounded-lg border border-border bg-surface px-5 py-4 text-sm font-medium hover:bg-muted"
                 >
-                  <span className="flex items-center gap-3"><Mail className="h-4 w-4 text-primary" /> nkrbhavith@gmail.com</span>
+                  <span className="flex flex-col">
+                    <span className="flex items-center gap-3"><Mail className="h-4 w-4 text-primary" /> Contact Bhavith</span>
+                    <span className="mt-0.5 text-xs text-muted-foreground">nkrbhavith@gmail.com</span>
+                  </span>
                   <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
