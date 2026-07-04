@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Download, Mail, Github, MapPin, BarChart3, Database, ShieldCheck, Sparkles, Award } from "lucide-react";
 
-import resumeUrl from "@/assets/Bhavith_Shetty_Resume.pdf?url";
+import resumeAsset from "@/assets/Bhavith_Shetty_Resume.pdf.asset.json";
+const resumeUrl = resumeAsset.url;
 import portraitAsset from "@/assets/portrait.png.asset.json";
 import shoppingmartArch from "@/assets/shoppingmart-architecture.png";
 
