@@ -85,7 +85,7 @@ const experience = [
   {
     role: "Power BI Developer (Contract)",
     org: "Lululemon Athletica",
-    period: "Jan 2022 – Mar 2023",
+    period: "Sept 2022 – Feb 2023",
     bullets: [
       "Built dashboards and semantic models over large retail datasets.",
       "Authored SQL Server stored procedures feeding the reporting layer.",
