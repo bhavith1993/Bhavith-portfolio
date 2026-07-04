@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Download, Mail, Github, BarChart3, Database, ShieldCheck, Sparkles, Award } from "lucide-react";
 
-import resumeUrl from "@/assets/Bhavith_Shetty_Resume.pdf?url";
+import resumeAsset from "@/assets/Bhavith_Shetty_Resume.pdf.asset.json";
+const resumeUrl = resumeAsset.url;
 import shoppingmartArch from "@/assets/shoppingmart-architecture.png";
 
 
@@ -83,7 +84,7 @@ const experience = [
   {
     role: "Power BI Developer (Contract)",
     org: "Lululemon Athletica",
-    period: "Jan 2022 – Mar 2023",
+    period: "Sept 2022 – Feb 2023",
     bullets: [
       "Built dashboards and semantic models over large retail datasets.",
       "Authored SQL Server stored procedures feeding the reporting layer.",
@@ -464,7 +465,10 @@ function Portfolio() {
                   href="mailto:nkrbhavith@gmail.com"
                   className="inline-flex items-center justify-between rounded-lg border border-border bg-surface px-5 py-4 text-sm font-medium hover:bg-muted"
                 >
-                  <span className="flex items-center gap-3"><Mail className="h-4 w-4 text-primary" /> Email Bhavith</span>
+                  <span className="flex flex-col">
+                    <span className="flex items-center gap-3"><Mail className="h-4 w-4 text-primary" /> Contact Bhavith</span>
+                    <span className="mt-0.5 text-xs text-muted-foreground">nkrbhavith@gmail.com</span>
+                  </span>
                   <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
