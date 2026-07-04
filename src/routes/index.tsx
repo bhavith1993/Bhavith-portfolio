@@ -408,7 +408,7 @@ function Portfolio() {
             {[
               { label: "M.S. Analytics (in progress)", org: "Georgia Institute of Technology" },
               { label: "PG Diploma, Data Analysis for BI", org: "St. Clair College, Canada" },
-              { label: "B.Tech, EEE", org: "Shivaji University" },
+              { label: "B.E, Electrical Engineering", org: "Shivaji University" },
             ].map((ed) => (
               <div key={ed.label} className="rounded-xl border border-border bg-surface p-5">
                 <div className="text-xs uppercase tracking-wider text-muted-foreground">Education</div>
