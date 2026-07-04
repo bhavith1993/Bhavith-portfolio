@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight, Download, Mail, Github, MapPin, BarChart3, Database, ShieldCheck, Sparkles, Award } from "lucide-react";
+import { ArrowUpRight, Download, Mail, Github, BarChart3, Database, ShieldCheck, Sparkles, Award } from "lucide-react";
 
 import resumeUrl from "@/assets/Bhavith_Shetty_Resume.pdf?url";
-import portraitAsset from "@/assets/portrait.png.asset.json";
 import shoppingmartArch from "@/assets/shoppingmart-architecture.png";
 
 
@@ -162,7 +161,7 @@ function Portfolio() {
       {/* Hero — split screen */}
       <section id="top" className="relative overflow-hidden border-b border-border/60">
         <div className="grid-lines absolute inset-0 opacity-60" aria-hidden />
-        <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-20 lg:grid-cols-2 lg:gap-16 lg:py-28">
+        <div className="relative mx-auto max-w-4xl px-6 py-20 lg:py-28">
           <div className="flex flex-col justify-center">
             <div className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1 text-xs text-muted-foreground">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
@@ -205,27 +204,6 @@ function Portfolio() {
                 <dd className="mt-1 font-display text-2xl font-semibold">−80%</dd>
               </div>
             </dl>
-          </div>
-          <div className="relative">
-            <div className="absolute -inset-4 rounded-2xl bg-primary/10 blur-2xl" aria-hidden />
-            <div className="relative overflow-hidden rounded-2xl border border-border bg-surface">
-              <img
-                src={portraitAsset.url}
-                alt="Bhavith Shetty"
-                width={900}
-                height={1100}
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-lg border border-border bg-background/70 px-4 py-3 backdrop-blur">
-                <div>
-                  <div className="text-sm font-medium">Bhavith Shetty</div>
-                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                    <MapPin className="h-3 w-3" /> Mumbai, India — Remote
-                  </div>
-                </div>
-                <span className="rounded-full bg-primary/15 px-2.5 py-1 text-xs font-medium text-primary">Power BI · Fabric</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -407,7 +385,7 @@ function Portfolio() {
             {[
               { label: "M.S. Analytics (in progress)", org: "Georgia Institute of Technology" },
               { label: "PG Diploma, Data Analysis for BI", org: "St. Clair College, Canada" },
-              { label: "B.Tech, EEE", org: "Shivaji University" },
+              { label: "BE Electrical Engineering", org: "Shivaji University" },
             ].map((ed) => (
               <div key={ed.label} className="rounded-xl border border-border bg-surface p-5">
                 <div className="text-xs uppercase tracking-wider text-muted-foreground">Education</div>
@@ -483,7 +461,7 @@ function Portfolio() {
                   <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
-                  href="mailto:hello@example.com"
+                  href="mailto:nkrbhavith@gmail.com"
                   className="inline-flex items-center justify-between rounded-lg border border-border bg-surface px-5 py-4 text-sm font-medium hover:bg-muted"
                 >
                   <span className="flex items-center gap-3"><Mail className="h-4 w-4 text-primary" /> Email Bhavith</span>
